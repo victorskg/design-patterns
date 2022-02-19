@@ -23,8 +23,7 @@ public class InventoryValidationProcessor extends ProcessorChain {
         var quantity = order.quantity();
 
         fakeInventoryDatabase.entrySet().stream()
-                .filter(entry -> entry.getKey().equals(product) && entry.getValue() > quantity)
-                .findFirst()
+                .filter(entry -> entry.getKey().equals(product) && entry.getValue() > quantity).findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(format("Product '%s' not available for given quantity.", product)));
 
         processNext(order);
