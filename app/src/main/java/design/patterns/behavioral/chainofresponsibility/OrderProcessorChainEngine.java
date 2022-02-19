@@ -14,6 +14,6 @@ public class OrderProcessorChainEngine {
     }
 
     public void process(Order order) {
-        this.orderProcessorChain.process(order);
+        orderProcessorChain.process(order);
     }
 }

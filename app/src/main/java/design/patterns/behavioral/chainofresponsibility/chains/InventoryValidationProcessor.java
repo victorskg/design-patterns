@@ -21,10 +21,12 @@ public class InventoryValidationProcessor extends ProcessorChain {
     public void process(Order order) {
         var product = order.productName();
         var quantity = order.quantity();
-        this.fakeInventoryDatabase.entrySet().stream()
+
+        fakeInventoryDatabase.entrySet().stream()
                 .filter(entry -> entry.getKey().equals(product) && entry.getValue() > quantity)
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(format("Product '%s' not available for given quantity.", product)));
-        this.processNext(order);
+
+        processNext(order);
     }
 }

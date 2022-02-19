@@ -16,6 +16,6 @@ public class ProductShippingEngine {
     }
 
     public String resolveEngine(ProductShippingType productShippingType, Product product) {
-        return this.productShippingMapper.get(productShippingType).dispatch(product);
+        return productShippingMapper.get(productShippingType).dispatch(product);
     }
 }

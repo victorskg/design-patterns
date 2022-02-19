@@ -13,7 +13,6 @@ public abstract class ProcessorChain {
     }
 
     protected void processNext(Order order) {
-        Optional.ofNullable(this.next)
-                .ifPresent(nextChain -> nextChain.process(order));
+        Optional.ofNullable(next).ifPresent(nextChain -> nextChain.process(order));
     }
 }

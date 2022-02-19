@@ -14,6 +14,6 @@ public class ConfirmOrderProcessor extends ProcessorChain {
         // Some business logic to confirm the product
         Logger.getLogger("ConfirmOrderProcessor").log(Level.INFO,
                 format("Confirming order with %d copies of a %s.", order.quantity(), order.productName()));
-        this.processNext(order);
+        processNext(order);
     }
 }

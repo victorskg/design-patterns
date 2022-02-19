@@ -14,6 +14,6 @@ public class DispatchProductProcessor extends ProcessorChain {
         // Some business logic to dispatch a product to the customer
         Logger.getLogger("ConfirmOrderProcessor").log(Level.INFO,
                 format("Dispatching %d copies of a %s.", order.quantity(), order.productName()));
-        this.processNext(order);
+        processNext(order);
     }
 }
