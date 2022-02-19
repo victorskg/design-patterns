@@ -12,7 +12,7 @@ public class DispatchProductProcessor extends ProcessorChain {
     @Override
     public void process(Order order) {
         // Some business logic to dispatch a product to the customer
-        Logger.getLogger("ConfirmOrderProcessor").log(Level.INFO,
+        Logger.getLogger("DispatchProductProcessor").log(Level.INFO,
                 format("Dispatching %d copies of a %s.", order.quantity(), order.productName()));
         processNext(order);
     }
