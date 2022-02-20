@@ -58,7 +58,7 @@ class ObserverTest {
     @Test
     @DisplayName("When unsubscribe delete operation should notify only remaining listeners")
     void shouldNotifyOnlyRemainingDeleteOperationListeners() {
-        var domainEvent = CustomerDomainEvent.SAVE_OPERATION;
+        var domainEvent = CustomerDomainEvent.DELETE_OPERATION;
         var customerEvent = new CustomerEvent(domainEvent, customer);
         customerEventEngine.getCustomerEventManager().unsubscribe(domainEvent, deleteCustomerListener);
         customerEventEngine.getCustomerEventManager().notify(domainEvent, customerEvent);
